@@ -1,0 +1,46 @@
+How to store the graph?
+- create a class for the graph
+
+global var:
+- nx_graph: the graph
+
+functions of RouterNetwork class:
+- buildNetwork(): reads data.txt to create a graph with nx_graph
+- renderNetwork(): renders nx_graph and updates network.html file
+
+How to format edges and nodes?
+- use a txt file (i.e. data.txt)
+	- format: 
+		OPTION 1
+		n (number of nodes)
+		node1
+		node2
+		...
+		nodex
+		e (number of edges)
+		start1 end1 weight1
+		start2 end2 weight2
+		...
+		startx endx weightx
+		
+		OPTION 2??
+		node1 node2 node3 ... nodex
+		start1 end1 weight1 start2 end2 weight2 ... startx endx weightx
+
+		OPTION 3**
+		node1 node2 node3 ... nodex
+		start1 start2 ... startx
+		end1 end2 ... endx
+		weight1 weight2 ... weightx
+
+		In python:
+		- splice each line 
+		- use python's zip function on the start, end and weight values, this will create an
+		  iterable we can use to add edges to the graph later
+		- use networkx's add_nodes_from(iterable) and add_edge() with weight and label attributes
+		  to create the graph
+		
+		OPTION 4**
+		create a weighted adjacency matrix
+		
+		
